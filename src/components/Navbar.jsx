@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
-import { MenuIcon, SearchIcon, TicketPlus, XIcon } from "lucide-react";
+import { MenuIcon, TicketPlus, XIcon } from "lucide-react";
 import { useState } from "react";
 import { UserButton, useUser } from "@clerk/clerk-react";
 import { useClerk } from "@clerk/clerk-react";
@@ -57,24 +57,6 @@ const Navbar = () => {
             scrollTo(0, 0);
             setIsOpen(false);
           }}
-          to="/"
-        >
-          Theaters
-        </Link>
-        <Link
-          onClick={() => {
-            scrollTo(0, 0);
-            setIsOpen(false);
-          }}
-          to="/"
-        >
-          Releases
-        </Link>
-        <Link
-          onClick={() => {
-            scrollTo(0, 0);
-            setIsOpen(false);
-          }}
           to="/favorite"
         >
           Favorites
@@ -82,7 +64,6 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-8">
-        <SearchIcon className="max-md:hidden w-6 h-6 cursor-pointer" />
         {user ? (
           <UserButton>
             <UserButton.MenuItems>
